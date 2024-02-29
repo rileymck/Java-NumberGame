@@ -1,0 +1,105 @@
+//By: Riley McKenzie
+//Date: 2/26/22
+//Programming guess the number
+
+import java.util.Random;
+import java.util.Scanner;
+public class game {
+
+	public static void main(String[] args) {
+		System.out.println("What level would you like to play?(1,2,or3) ");
+		Scanner num = new Scanner(System.in);
+		int level = num.nextInt();
+		if(level == 1) {
+			System.out.println("Playing level 1");
+			level1();
+		}
+		else if(level ==2) {
+			System.out.println("Playing level 2");
+			level2();
+		}
+		else {
+			System.out.println("Playing level 3");
+			level3();
+		}
+	}//end of void main
+	
+	static void level1() {
+		Random num = new Random();
+		int res = num.nextInt(10);
+		int e = 0;
+		for(int i =0; i<5; i++) {
+			System.out.println("Guess at what the number is 0-10: ");
+			//System.out.println(res);
+			Scanner input = new Scanner(System.in);
+			int number = input.nextInt();
+			if(number > res) {
+				System.out.println("Your number is to high");
+				e++;
+			}
+			else if(number<res) {
+				System.out.println("Your number is to low");
+				e++;
+			}
+			else {
+				System.out.println("Your number is correct");
+				System.exit(0);
+			}
+		}
+		if(e == 5) {
+			System.out.println("You lose");
+		}
+	}//end of function level1
+	static void level2() {
+		Random num = new Random();
+		int res = num.nextInt(50);
+		int e = 0;
+		for(int i =0; i<10; i++) {
+			System.out.println("Guess at what the number is 0-50: ");
+			//System.out.println(res);
+			Scanner input = new Scanner(System.in);
+			int number = input.nextInt();
+			if(number > res) {
+				System.out.println("Your number is to high");
+				e++;
+			}
+			else if(number<res) {
+				System.out.println("Your number is to low");
+				e++;
+			}
+			else {
+				System.out.println("Your number is correct");
+				System.exit(0);;
+			}
+		}
+		if(e == 10) {
+			System.out.println("You lose");
+		}
+	}//end of function level2
+	static void level3() {
+		Random num = new Random();
+		int res = num.nextInt(100);
+		int e = 0;
+		for(int i =0; i<15; i++) {
+			System.out.println("Guess at what the number is 0-100: ");
+			//System.out.println(res);
+			Scanner input = new Scanner(System.in);
+			int number = input.nextInt();
+			if(number > res) {
+				System.out.println("Your number is to high, try again");
+				e++;
+			}
+			else if(number<res) {
+				System.out.println("Your number is to low, try again");
+				e++;
+			}
+			else {
+				System.out.println("Your number is correct");
+				System.exit(0);;
+			}
+		}
+		if(e == 15) {
+			System.out.println("You lose");
+		}
+	}//end of function level3
+}//end of class
